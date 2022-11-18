@@ -33,13 +33,13 @@ public class HomeAppliancesStore {
         setCompanyName(args);
         setAddress(args);
         setEmployees(args);
-        if (CompanyName == null) {
+        if (args.length == 0) {
             System.out.println("Please enter the Company Name, the Address and the number of employees");
         }
-        else if (Address == null ) {
+        else if (args.length == 1 ) {
             System.out.println("Please enter the Address and the number of employees");
         }
-        else if (Employees <= 0) {
+        else if (args.length == 2) {
             System.out.println("Please enter the number of employees");
         }
         else {
