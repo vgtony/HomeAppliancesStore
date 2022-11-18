@@ -6,7 +6,7 @@ public class Oven {
     private String deviceName;
     private String deviceType;
     private double nrgCon;
-    private static int counter;
+    private static int counterOven=0;
     private int ovenCap;
     private String nrgClass;
     private String colour;
@@ -96,9 +96,9 @@ public class Oven {
     {
         return nrgCon;
     }
-    public int getCounter()
+    public int getCounterOven()
     {
-        return counter;
+        return counterOven;
     }
     public int getOvenCap()
     {
@@ -122,7 +122,7 @@ public class Oven {
     }
     /** ............ **/
     /** public constructor **/
-    public Oven(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon)
+    public Oven(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int ovenCap, String nrgClass, String colour, boolean wifi, boolean digitalScreen)
     {
         this.length = length;
         this.height = height;
@@ -131,18 +131,25 @@ public class Oven {
         this.deviceName = deviceName;
         this.deviceType = deviceType;
         this.nrgCon = nrgCon;
-        counter++;
-    }
-    /** ............ **/
-    /** private constructor **/
-    private Oven(int ovenCap, String nrgClass, String colour, boolean wifi, boolean digitalScreen)
-    {
         this.ovenCap = ovenCap;
         this.nrgClass = nrgClass;
         this.colour = colour;
         this.wifi = wifi;
         this.digitalScreen = digitalScreen;
+        counterOven++;
     }
     /** ............ **/
+    /** prints the characteristics, values imported in main **/
+    public void printOven()
+    {
+        System.out.println("CHARACTERISTICS \n" );
+        System.out.println("Manufacturer || Device Type ||  Device Name : " +this.manufacturer+ " || " +this.deviceType+ " || "+this.deviceName);
+        System.out.println("Length || Height || Depth : " +this.length+ " || " +this.height+ " || " +this.depth);
+        System.out.println("Energy Consumption : " +this.nrgCon);
+        System.out.println("Oven Capacity || Energy Class || Colour " +this.ovenCap+ " || " +this.nrgClass+ " || " +this.colour);
+        System.out.println("Wifi || Digital Screen : " +this.wifi+ " || " +this.digitalScreen);
+    }
+
+    public void periodicMaintenance(){}
 
 }

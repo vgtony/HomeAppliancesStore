@@ -6,7 +6,7 @@ public class AirCondition {
     private String deviceName;
     private String deviceType;
     private double nrgCon;
-    private static int counter;
+    private static int counterAc=0;
     private int coolBTU;
     private int heatBTU;
     private boolean wifi;
@@ -95,9 +95,9 @@ public class AirCondition {
     {
         return nrgCon;
     }
-    public int getCounter()
+    public int getCounterAc()
     {
-        return counter;
+        return counterAc;
     }
     public int getHeatBTU()
     {
@@ -121,7 +121,7 @@ public class AirCondition {
     }
     /** ............ **/
     /** public constructor **/
-    public AirCondition(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon)
+    public AirCondition(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int coolBTU, int heatBTU, boolean wifi, boolean airFilter, String colour)
     {
         this.length = length;
         this.height = height;
@@ -130,18 +130,24 @@ public class AirCondition {
         this.deviceName = deviceName;
         this.deviceType = deviceType;
         this.nrgCon = nrgCon;
-        counter++;
-    }
-    /** ............ **/
-    /** private constructor **/
-    private AirCondition(int coolBTU, int heatBTU, boolean wifi, boolean airFilter, String colour)
-    {
         this.coolBTU = coolBTU;
         this.heatBTU = heatBTU;
         this.wifi = wifi;
         this.airFilter = airFilter;
         this.colour = colour;
+        counterAc++;
     }
     /** ............ **/
+    /** prints the characteristics, values imported in main **/
+    public void printAc()
+    {
+        System.out.println("CHARACTERISTICS \n" );
+        System.out.println("Manufacturer || Device Type ||  Device Name : " +this.manufacturer+ " || " +this.deviceType+ " || "+this.deviceName);
+        System.out.println("Length || Height || Depth : " +this.length+ " || " +this.height+ " || " +this.depth);
+        System.out.println("Energy Consumption : " +this.nrgCon);
+        System.out.println("Cooling Power || Heating Power  " +this.coolBTU+ " || " +this.heatBTU);
+        System.out.println("WiFi || Air Filter || Colour : " +this.wifi+ " || " +this.airFilter+ " || " +this.colour);
+    }
+    public void periodicMaintenance(){}
 
 }

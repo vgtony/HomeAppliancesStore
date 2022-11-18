@@ -6,7 +6,7 @@ public class WashingMachine {
     private String deviceName;
     private String deviceType;
     private double nrgCon;
-    private static int counter;
+    private static int counterWash=0;
     private int rpm;
     private int washCap;
     private boolean digitalScreen;
@@ -95,9 +95,9 @@ public class WashingMachine {
     {
         return nrgCon;
     }
-    public int getCounter()
+    public int getCounterWash()
     {
-        return counter;
+        return counterWash;
     }
     public int getRpm()
     {
@@ -120,8 +120,8 @@ public class WashingMachine {
         return nrgClass;
     }
     /** ............ **/
-    /** public constructor **/
-    public WashingMachine(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon)
+    /** constructor **/
+    public WashingMachine(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int rpm, int washCap, boolean startDelay, boolean digitalScreen, String nrgClass)
     {
         this.length = length;
         this.height = height;
@@ -130,18 +130,25 @@ public class WashingMachine {
         this.deviceName = deviceName;
         this.deviceType = deviceType;
         this.nrgCon = nrgCon;
-        counter++;
-    }
-    /** ............ **/
-    /** private constructor **/
-    private WashingMachine(int rpm, int washCap, boolean startDelay, boolean digitalScreen, String nrgClass)
-    {
         this.rpm = rpm;
         this.washCap = washCap;
         this.startDelay = startDelay;
         this.digitalScreen = digitalScreen;
         this.nrgClass = nrgClass;
+        counterWash++;
     }
+
     /** ............ **/
+    /** prints the characteristics, values imported in main **/
+    public void printWash()
+    {
+        System.out.println("CHARACTERISTICS \n" );
+        System.out.println("Manufacturer || Device Type ||  Device Name : " +this.manufacturer+ " || " +this.deviceType+ " || "+this.deviceName);
+        System.out.println("Length || Height || Depth : " +this.length+ " || " +this.height+ " || " +this.depth);
+        System.out.println("Energy Consumption : " +this.nrgCon);
+        System.out.println("Washing Capacity(kg) || RPM || Start Delay " +this.washCap+ " || " +this.rpm+ " || " +this.startDelay);
+        System.out.println("Digital Screen || Energy Class : " +this.digitalScreen+ " || " +this.nrgClass);
+    }
+    public void periodicMaintenance(){}
 
 }

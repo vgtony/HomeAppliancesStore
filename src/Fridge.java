@@ -6,7 +6,7 @@ public class Fridge {
     private String deviceName;
     private String deviceType;
     private double nrgCon;
-    private static int counter;
+    private static int counterFridge=0;
     private int totalCap;
     private int freezerCap;
     private int fridgeCap;
@@ -95,9 +95,9 @@ public class Fridge {
     {
         return nrgCon;
     }
-    public int getCounter()
+    public int getCounterFridge()
     {
-        return counter;
+        return counterFridge;
     }
     public int getTotalCap()
     {
@@ -120,8 +120,8 @@ public class Fridge {
         return iceCubes;
     }
     /** ............ **/
-    /** public constructor **/
-    public Fridge(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon)
+    /** constructor **/
+    public Fridge(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int totalCap, int freezerCap, int fridgeCap, boolean coldWater, boolean iceCubes)
     {
         this.length = length;
         this.height = height;
@@ -130,18 +130,25 @@ public class Fridge {
         this.deviceName = deviceName;
         this.deviceType = deviceType;
         this.nrgCon = nrgCon;
-        counter++;
-    }
-    /** ............ **/
-    /** private constructor **/
-    private Fridge(int totalCap, int freezerCap, int fridgeCap, boolean coldWater, boolean iceCubes)
-    {
         this.totalCap = totalCap;
         this.freezerCap = freezerCap;
         this.fridgeCap = fridgeCap;
         this.coldWater = coldWater;
         this.iceCubes = iceCubes;
+        counterFridge++;
     }
     /** ............ **/
+
+    /** prints the characteristics, values imported in main **/
+    public void printFridge()
+    {
+        System.out.println("CHARACTERISTICS \n" );
+        System.out.println("Manufacturer || Device Type ||  Device Name : " +this.manufacturer+ " || " +this.deviceType+ " || "+this.deviceName);
+        System.out.println("Length || Height || Depth : " +this.length+ " || " +this.height+ " || " +this.depth);
+        System.out.println("Energy Consumption : " +this.nrgCon);
+        System.out.println("Capacities Total || Freezer || Fridge " +this.totalCap+ " || " +this.freezerCap+ " || " +this.fridgeCap);
+        System.out.println("Cold Water || Ice Cube functions : " +this.coldWater+ " || " +this.iceCubes);
+    }
+    public void periodicMaintenance(){}
 
 }
