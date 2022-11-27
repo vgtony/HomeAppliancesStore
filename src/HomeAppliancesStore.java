@@ -5,7 +5,7 @@
  *
  */
 public class HomeAppliancesStore {
-/** setters-getters **/
+/** setters-getters */
     static int counter=0;
     static String CompanyName;
     static String Address;
@@ -22,37 +22,46 @@ public class HomeAppliancesStore {
     {
         return Employees;
     }
-    public static void setCompanyName(String[] args)
-    {
-        CompanyName = args[0];
-    }
-    public static void setAddress(String[] args)
-    {
-        Address = args[1];
-    }
-    public static void setEmployees(String[] args)
-    {
-        Employees = Integer.parseInt(args[2]);
-    }
-/** main **/
-    public static void main(String[] args)  {
 
-        setCompanyName(args);
-        setAddress(args);
-        setEmployees(args);
-        if (args.length == 0) { /** checks for existing or non-existing arguments **/
+    public static void setCompanyName(String newCompanyName)
+    {
+        CompanyName = newCompanyName;
+    }
+    public static void setAddress(String newAddress)
+    {
+       Address = newAddress;
+    }
+    public static void setEmployees(int newEmployees)
+    {
+        Employees = newEmployees;
+    }
+
+    /**
+     * checks if all arguments are correctly inputed and prints the corresponding messages
+     * reads the inputs and prints the characteristics of Devices with the help from the other classes
+     * @param args array of inputs
+     */
+    public static void main(String[] args)  {
+        /* checks for existing or non-existing arguments */
+        if (args.length == 0) {
             System.out.println("Please enter the Company Name, the Address and the number of employees");
         }
         else if (args.length == 1 ) {
+            setCompanyName(args[0]);
             System.out.println("Please enter the Address and the number of employees");
         }
         else if (args.length == 2) {
+            setCompanyName(args[0]);
+            setAddress(args[1]);
             System.out.println("Please enter the number of employees");
         }
         else {
+            setCompanyName(args[0]);
+            setAddress(args[1]);
+            setEmployees(Integer.parseInt(args[2]));
             System.out.println("Company name is " +getCompanyName() + " on the Address " +getAddress() + " with an army of " +getEmployees() +" employees");
         }
-        /** imports values **/
+        /* imports values */
         Fridge fridge1 = new Fridge(80, 193, 80, "Pitsos", "PKNB56XLEP",
                 "FridgeFreezer", 262, 444, 111, 333, true, false);
         Fridge fridge2 = new Fridge(60, 186, 66, "Bosch", "KGN36NLEA",
@@ -69,7 +78,8 @@ public class HomeAppliancesStore {
                 "AirCondition", 221, 15000, 12000, false, true, "White");
         AirCondition airCon2 = new AirCondition(770, 288, 234, "Daikin", "Siesta Sensira",
                 "AirCondition", 178, 17000, 16000, true, true, "White");
-        /** prints the imported values **/
+
+        /* prints the imported values */
         fridge1.printFridge();
         fridge2.printFridge();
         washMach1.printWash();
@@ -78,7 +88,7 @@ public class HomeAppliancesStore {
         oven2.printOven();
         airCon1.printAc();
         airCon2.printAc();
-        /** adds the counters from all the classes and prints them individually and in total **/
+        /* adds the counters from all the classes and prints them individually and in total */
         counter = fridge2.getCounterFridge() + washMach2.getCounterWash() + oven2.getCounterOven() + airCon2.getCounterAc();
         System.out.println("\n The individual amount of devices is Fridge= " +fridge2.getCounterFridge()+ " || Washing Machine= " +washMach2.getCounterWash()+ " || Oven= " +oven2.getCounterOven()+ " || Air Condition= " +airCon2.getCounterAc()+ ". With a total amount of " +counter+ " devices.");
     }
