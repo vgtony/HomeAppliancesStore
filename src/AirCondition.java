@@ -58,7 +58,7 @@ public class AirCondition {
     }
     /** ............ */
     /** public constructor */
-    public AirCondition(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int coolBTU, int heatBTU, boolean wifi, boolean airFilter, String colour)
+    public AirCondition(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int coolBTU, int heatBTU, boolean wifi, boolean airFilter, String colour, boolean status)
     {
         this.coolBTU = coolBTU;
         this.heatBTU = heatBTU;

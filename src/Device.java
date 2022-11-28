@@ -7,11 +7,11 @@ public class Device {
     static String deviceType;
     static double nrgCon;
     private static int counter=0;
-    boolean status;
+    static boolean status;
 
 
 
-    public Device(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon)
+    public Device(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, boolean status)
     {
         this.length = length;
         this.height = height;
@@ -20,8 +20,8 @@ public class Device {
         this.deviceName = deviceName;
         this.deviceType = deviceType;
         this.nrgCon = nrgCon;
+        this.status = status;
         counter++;
-
     }
 
     public void powerOn(){
@@ -29,6 +29,9 @@ public class Device {
     }
     public void powerOff(){
         status = false;
+    }
+    boolean status(){
+        return status;
     }
 
     /* Setters */
@@ -93,6 +96,15 @@ public class Device {
     public void setNrgCon(double nrgCon)
     {
         this.nrgCon = nrgCon;
+    }
+
+    /**
+     *
+     * @param status Status is On or Off
+     */
+    public void setStatus(boolean status)
+    {
+        this.status = status;
     }
 
     /* Getters */
@@ -167,6 +179,15 @@ public class Device {
     public int getCounter()
     {
         return counter;
+    }
+
+    /**
+     *
+     * @return Status On/Off
+     */
+    public static boolean getStatus()
+    {
+        return status;
     }
 
 

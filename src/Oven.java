@@ -61,7 +61,7 @@ public class Oven {
     }
     /** ............ */
     /** public constructor */
-    public Oven(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int ovenCap, String nrgClass, String colour, boolean wifi, boolean digitalScreen)
+    public Oven(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int ovenCap, String nrgClass, String colour, boolean wifi, boolean digitalScreen, boolean status)
     {
 
         this.ovenCap = ovenCap;

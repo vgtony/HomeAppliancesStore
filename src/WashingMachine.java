@@ -60,7 +60,7 @@ public class WashingMachine {
     }
     /** ............ */
     /** constructor */
-    public WashingMachine(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int rpm, int washCap, boolean startDelay, boolean digitalScreen, String nrgClass)
+    public WashingMachine(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int rpm, int washCap, boolean startDelay, boolean digitalScreen, String nrgClass, boolean status)
     {
         this.rpm = rpm;
         this.washCap = washCap;

@@ -8,7 +8,7 @@ public class Fridge {
     private boolean iceCubes;
 
 
-    /** setters */
+    /* setters */
 
     public void setTotalCap(int totalCap)
     {
@@ -31,7 +31,7 @@ public class Fridge {
         this.iceCubes = iceCubes;
     }
 
-    /** getters */
+    /* getters */
     public int getCounterFridge()
     {
         return counterFridge;
@@ -57,8 +57,8 @@ public class Fridge {
         return iceCubes;
     }
 
-    /** constructor */
-    public Fridge(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int totalCap, int freezerCap, int fridgeCap, boolean coldWater, boolean iceCubes)
+    /* constructor */
+    public Fridge(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int totalCap, int freezerCap, int fridgeCap, boolean coldWater, boolean iceCubes, boolean status)
     {
         this.totalCap = totalCap;
         this.freezerCap = freezerCap;
