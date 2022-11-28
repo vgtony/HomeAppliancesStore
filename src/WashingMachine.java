@@ -1,4 +1,4 @@
-public class WashingMachine {
+public class WashingMachine extends Device {
     private static int counterWash=0;
     private int rpm;
     private int washCap;
@@ -62,6 +62,7 @@ public class WashingMachine {
     /** constructor */
     public WashingMachine(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int rpm, int washCap, boolean startDelay, boolean digitalScreen, String nrgClass, boolean status)
     {
+        super(length, height, depth, manufacturer, deviceName, deviceType, nrgCon, status);
         this.rpm = rpm;
         this.washCap = washCap;
         this.startDelay = startDelay;
@@ -75,9 +76,9 @@ public class WashingMachine {
     public void printWash()
     {
         System.out.println("CHARACTERISTICS \n" );
-        System.out.println("Manufacturer || Device Type ||  Device Name : " +Device.manufacturer+ " || " +Device.deviceType+ " || "+Device.deviceName);
-        System.out.println("Length || Height || Depth : " +Device.length+ " || " +Device.height+ " || " +Device.depth);
-        System.out.println("Energy Consumption : " +Device.nrgCon);
+        System.out.println("Manufacturer || Device Type ||  Device Name : " +getManufacturer()+ " || " +getDeviceType()+ " || "+getDeviceName());
+        System.out.println("Length || Height || Depth : " +getLength()+ " || " +getHeight()+ " || " +getDepth());
+        System.out.println("Energy Consumption : " +getNrgCon());
         System.out.println("Washing Capacity(kg) || RPM || Start Delay " +this.washCap+ " || " +this.rpm+ " || " +this.startDelay);
         System.out.println("Digital Screen || Energy Class : " +this.digitalScreen+ " || " +this.nrgClass);
     }

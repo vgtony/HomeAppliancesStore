@@ -91,10 +91,25 @@ public class HomeAppliancesStore {
         /* adds the counters from all the classes and prints them individually and in total */
         counter = fridge2.getCounterFridge() + washMach2.getCounterWash() + oven2.getCounterOven() + airCon2.getCounterAc();
         System.out.println("\n The individual amount of devices is Fridge= " +fridge2.getCounterFridge()+ " || Washing Machine= " +washMach2.getCounterWash()+ " || Oven= " +oven2.getCounterOven()+ " || Air Condition= " +airCon2.getCounterAc()+ ". With a total amount of " +counter+ " devices.");
-        public boolean deviceStatus(Device d) {
-            return d.status();
-        }
+        System.out.print("\n#1 Fridge status: " +deviceStatus(fridge1)+ " || #2 Fridge status: " +deviceStatus(fridge2));
+        System.out.print("\n#1 Washing Machine status: " +deviceStatus(washMach1)+ " || #2 Washing Machine status: " +deviceStatus(washMach2));
+        System.out.print("\n#1 Oven status: " +deviceStatus(oven1)+ " || #2 Oven status: " +deviceStatus(oven2));
+        System.out.print("\n#1 Air Condition status: " +deviceStatus(airCon1)+ " || #2 Air Condition status: " +deviceStatus(airCon2));
+
     }
 
+    /**
+     *
+     * @param d Device object for the method
+     * @return returns ON/OFF for the Status prints
+     */
+    public static String deviceStatus(Device d){
+        if(d.status() == true){
+            return("ON");
+        }
+        else{
+            return("OFF");
+        }
+    }
 
 }

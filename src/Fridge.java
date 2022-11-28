@@ -1,4 +1,4 @@
-public class Fridge {
+public class Fridge extends Device{
 
     private static int counterFridge=0;
     private int totalCap;
@@ -60,6 +60,7 @@ public class Fridge {
     /* constructor */
     public Fridge(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int totalCap, int freezerCap, int fridgeCap, boolean coldWater, boolean iceCubes, boolean status)
     {
+        super(length, height, depth, manufacturer, deviceName, deviceType, nrgCon, status);
         this.totalCap = totalCap;
         this.freezerCap = freezerCap;
         this.fridgeCap = fridgeCap;
@@ -72,12 +73,12 @@ public class Fridge {
     public void printFridge()
     {
         System.out.println("CHARACTERISTICS \n" );
-        System.out.println("Manufacturer || Device Type ||  Device Name : " +Device.manufacturer+ " || " +Device.deviceType+ " || "+Device.deviceName);
-        System.out.println("Length || Height || Depth : " +Device.length+ " || " +Device.height+ " || " +Device.depth);
-        System.out.println("Energy Consumption : " +Device.nrgCon);
+        System.out.println("Manufacturer || Device Type ||  Device Name : " +getManufacturer()+ " || " +getDeviceType()+ " || "+getDeviceName());
+        System.out.println("Length || Height || Depth : " +getLength()+ " || " +getHeight()+ " || " +getDepth());
+        System.out.println("Energy Consumption : " +getNrgCon());
         System.out.println("Capacities Total || Freezer || Fridge " +this.totalCap+ " || " +this.freezerCap+ " || " +this.fridgeCap);
         System.out.println("Cold Water || Ice Cube functions : " +this.coldWater+ " || " +this.iceCubes);
     }
-    public void periodicMaintenance(){}
+    private void periodicMaintenance(){}
 
 }

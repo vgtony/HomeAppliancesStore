@@ -1,13 +1,13 @@
 public class Device {
-    static double length;
-    static double height;
-    static double depth;
-    static String manufacturer;
-    static String deviceName;
-    static String deviceType;
-    static double nrgCon;
+    private double length;
+    private double height;
+    private double depth;
+    private String manufacturer;
+    private String deviceName;
+    private String deviceType;
+    private double nrgCon;
     private static int counter=0;
-    static boolean status;
+    private boolean status;
 
 
 
@@ -29,9 +29,6 @@ public class Device {
     }
     public void powerOff(){
         status = false;
-    }
-    boolean status(){
-        return status;
     }
 
     /* Setters */
@@ -185,7 +182,7 @@ public class Device {
      *
      * @return Status On/Off
      */
-    public static boolean getStatus()
+    public boolean status()
     {
         return status;
     }

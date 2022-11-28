@@ -1,4 +1,4 @@
-public class Oven {
+public class Oven extends Device {
 
     private static int counterOven=0;
     private int ovenCap;
@@ -63,7 +63,7 @@ public class Oven {
     /** public constructor */
     public Oven(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int ovenCap, String nrgClass, String colour, boolean wifi, boolean digitalScreen, boolean status)
     {
-
+        super(length, height, depth, manufacturer, deviceName, deviceType, nrgCon, status);
         this.ovenCap = ovenCap;
         this.nrgClass = nrgClass;
         this.colour = colour;
@@ -76,9 +76,9 @@ public class Oven {
     public void printOven()
     {
         System.out.println("CHARACTERISTICS \n" );
-        System.out.println("Manufacturer || Device Type ||  Device Name : " +Device.manufacturer+ " || " +Device.deviceType+ " || "+Device.deviceName);
-        System.out.println("Length || Height || Depth : " +Device.length+ " || " +Device.height+ " || " +Device.depth);
-        System.out.println("Energy Consumption : " +Device.nrgCon);
+        System.out.println("Manufacturer || Device Type ||  Device Name : " +getManufacturer()+ " || " +getDeviceType()+ " || "+getDeviceName());
+        System.out.println("Length || Height || Depth : " +getLength()+ " || " +getHeight()+ " || " +getDepth());
+        System.out.println("Energy Consumption : " +getNrgCon());
         System.out.println("Oven Capacity || Energy Class || Colour " +this.ovenCap+ " || " +this.nrgClass+ " || " +this.colour);
         System.out.println("Wifi || Digital Screen : " +this.wifi+ " || " +this.digitalScreen);
     }

@@ -1,4 +1,4 @@
-public class AirCondition {
+public class AirCondition extends Device {
 
     private static int counterAc=0;
     private int coolBTU;
@@ -60,6 +60,7 @@ public class AirCondition {
     /** public constructor */
     public AirCondition(double length, double height, double depth, String manufacturer, String deviceName, String deviceType, double nrgCon, int coolBTU, int heatBTU, boolean wifi, boolean airFilter, String colour, boolean status)
     {
+        super(length, height, depth, manufacturer, deviceName, deviceType, nrgCon, status);
         this.coolBTU = coolBTU;
         this.heatBTU = heatBTU;
         this.wifi = wifi;
@@ -72,9 +73,9 @@ public class AirCondition {
     public void printAc()
     {
         System.out.println("CHARACTERISTICS \n" );
-        System.out.println("Manufacturer || Device Type ||  Device Name : " +Device.manufacturer+ " || " +Device.deviceType+ " || "+Device.deviceName);
-        System.out.println("Length || Height || Depth : " +Device.length+ " || " +Device.height+ " || " +Device.depth);
-        System.out.println("Energy Consumption : " +Device.nrgCon);
+        System.out.println("Manufacturer || Device Type ||  Device Name : " +getManufacturer()+ " || " +getDeviceType()+ " || "+getDeviceName());
+        System.out.println("Length || Height || Depth : " +getLength()+ " || " +getHeight()+ " || " +getDepth());
+        System.out.println("Energy Consumption : " +getNrgCon());
         System.out.println("Cooling Power || Heating Power  " +this.coolBTU+ " || " +this.heatBTU);
         System.out.println("WiFi || Air Filter || Colour : " +this.wifi+ " || " +this.airFilter+ " || " +this.colour);
     }
